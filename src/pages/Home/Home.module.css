@@ -1,0 +1,10 @@
+.movies__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.spinnerBox {
+  width: 100px;
+  height: 100px;
+  display: flex;
+}

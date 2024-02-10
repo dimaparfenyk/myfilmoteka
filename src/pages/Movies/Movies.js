@@ -1,3 +1,7 @@
 export default function Movies() {
-  return <h1>Movies</h1>;
+  return (
+    <div className="container">
+      <h1>Movies</h1>
+    </div>
+  );
 }
