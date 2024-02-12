@@ -89,3 +89,29 @@ header li .active {
   border: none;
   background: inherit;
 }
+
+.styled__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff6b01;
+  border: 2px solid #ff6b01;
+  border-radius: 20px;
+
+  padding: 10px 40px;
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+}
+
+.styled__link.active {
+  color: #212121;
+  background-color: #fff;
+}

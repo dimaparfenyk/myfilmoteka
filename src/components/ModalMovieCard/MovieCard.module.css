@@ -1,0 +1,53 @@
+.modal__wrapper {
+  max-width: 814px;
+  margin: 0 auto;
+  background: white;
+  padding: 16px 40px;
+}
+
+.movie__article {
+  display: flex;
+  gap: 16px;
+}
+
+.modal__imgBox {
+  width: 50%;
+}
+.modal__MovieMeta {
+  width: 50%;
+}
+
+.movieCard_navList {
+  display: flex;
+}
+
+.cardTitle {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 35px;
+}
+.accent__box {
+  display: inline-block;
+  color: #fff;
+  background-color: #ff6b01;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.cardTextSpan {
+  margin-right: 40px;
+  color: #8c8c8c;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+.MovieMeta__box {
+  margin-bottom: 10px;
+}
+.cardSubtitle {
+  margin-bottom: 8px;
+}
+
+.genreName:not(:last-child) {
+  margin-right: 4px;
+}

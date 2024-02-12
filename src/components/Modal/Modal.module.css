@@ -1,0 +1,28 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal {
+  position: relative;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 24px);
+}
+
+.closeIcon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 24px;
+  fill: #8c8c8c;
+  height: 24px;
+}

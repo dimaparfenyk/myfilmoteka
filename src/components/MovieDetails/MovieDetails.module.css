@@ -1,0 +1,89 @@
+.movie__container {
+  margin-top: 48px;
+}
+
+.movie__article {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.poster__box {
+  position: relative;
+  max-width: 50%;
+}
+
+.movie__details_box {
+  display: flex;
+}
+
+.movie__navList {
+  display: flex;
+}
+
+.movie__meta {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  min-height: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #ff6b01;
+}
+
+.inner__movie_meta {
+  flex: 1 1 auto;
+}
+
+.movie__poster {
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie__subtitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #faebd7;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.overview__text {
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.66;
+}
+
+.genres__list {
+  display: flex;
+}
+
+.genreName + .genreName {
+  margin-left: 8px;
+}
+
+.accent__box {
+  display: inline-block;
+  background-color: #ff6b01;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.accent__box.movie__text {
+  color: #fff;
+}
+
+.movie__text {
+  margin-left: 16px;
+}
+
+.movie__navItem + .movie__navItem {
+  margin-left: 40px;
+}
