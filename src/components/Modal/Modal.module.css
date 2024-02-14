@@ -13,16 +13,6 @@
 }
 
 .modal {
-  position: relative;
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
-}
-
-.closeIcon {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 24px;
-  fill: #8c8c8c;
-  height: 24px;
 }

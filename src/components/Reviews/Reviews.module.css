@@ -1,0 +1,33 @@
+.reviews__list {
+  padding: 30px;
+  background: rgba(40, 40, 40, 0.7);
+}
+
+.review__item {
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+
+  color: #fff;
+}
+
+.review__item:not(:last-child)::after {
+  content: "* * *";
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6b01;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.userName {
+  color: #ff6b01;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.review__text {
+  text-indent: 30px;
+}

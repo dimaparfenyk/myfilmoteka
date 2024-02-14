@@ -14,6 +14,7 @@ export default function MovieDetails() {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? "/movies");
+  const outletBoxRef = useRef(null);
 
   useEffect(() => {
     api.getDetais(movieId).then((res) => {
@@ -22,14 +23,23 @@ export default function MovieDetails() {
     });
   }, [movieId]);
 
+  function scrollSmooth() {
+    outletBoxRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
   const { id, title, name, vote_average, release_date, genres, overview } =
     movie;
 
   return (
     <div className="container">
-      <ButtonLink to={backLinkHref.current} state={{ from: location }}>
+      <ButtonLink
+        to={backLinkHref.current}
+        state={{ from: location }}
+        propClass={css.primary__btn}
+      >
         Back
       </ButtonLink>
+
       {id && (
         <div className={css.movie__container}>
           <article className={css.movie__article}>
@@ -42,10 +52,10 @@ export default function MovieDetails() {
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={title || name}
               />
-              <h3 className={css.movie__subtitle}>{title}</h3>
             </div>
             <div className={css.movie__meta}>
               <div className={css.inner__movie_meta}>
+                <h2 className={css.movie__subtitle}>{title}</h2>
                 <h3>About</h3>
                 <p className={css.overview__text}>{overview}</p>
                 <div className={css.movie__details_box}>
@@ -62,8 +72,8 @@ export default function MovieDetails() {
                       )
                     )}
                   </ul>
-                  <p className={css.movie__text}>
-                    | {release_date.split("-")[0]}
+                  <p className={`${css.first__paragraph} ${css.movie__text}`}>
+                    {release_date.split("-")[0]}
                   </p>
                   <p className={`${css.accent__box} ${css.movie__text}`}>
                     {vote_average.toFixed(1)}
@@ -71,12 +81,12 @@ export default function MovieDetails() {
                 </div>
               </div>
               <ul className={css.movie__navList}>
-                <li className={css.movie__navItem}>
+                <li className={css.movie__navItem} onClick={scrollSmooth}>
                   <NavLink to="cast" className="styled__link">
                     Cast
                   </NavLink>
                 </li>
-                <li className={css.movie__navItem}>
+                <li className={css.movie__navItem} onClick={scrollSmooth}>
                   <NavLink to="reviews" className="styled__link">
                     Reviews
                   </NavLink>
@@ -84,7 +94,9 @@ export default function MovieDetails() {
               </ul>
             </div>
           </article>
-          <Outlet />
+          <div id="outlet-box" ref={outletBoxRef}>
+            <Outlet />
+          </div>
         </div>
       )}
       {modalShown && (
@@ -96,7 +108,10 @@ export default function MovieDetails() {
               : "none"
           }
         >
-          <ModalMovieCard movie={movie} />
+          <ModalMovieCard
+            movie={movie}
+            onClose={() => setModalShown((prev) => !prev)}
+          />
         </Modal>
       )}
     </div>

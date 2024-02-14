@@ -22,7 +22,11 @@ export default function MovieItem({ movie, genres }) {
 
   return (
     <li className={css.movieItem}>
-      <Link to={linkPath} state={{ from: location }}>
+      <Link
+        to={linkPath}
+        state={{ from: location }}
+        className={css.movie__link}
+      >
         <img
           className={css.movie__poster}
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}

@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.subpage__title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+}

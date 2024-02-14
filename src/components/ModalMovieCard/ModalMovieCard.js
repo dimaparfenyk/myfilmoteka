@@ -1,6 +1,8 @@
+import { SlClose } from "react-icons/sl";
 import css from "./MovieCard.module.css";
+import Button from "../Button";
 
-export default function ModalMovieCard({ movie }) {
+export default function ModalMovieCard({ movie, onClose }) {
   const {
     title,
     name,
@@ -22,7 +24,7 @@ export default function ModalMovieCard({ movie }) {
           />
         </div>
         <div className={css.modal__MovieMeta}>
-          <div>
+          <div className={css.right__moviemeta}>
             <h3 className={css.cardTitle}>{title}</h3>
             <div className={css.MovieMeta__box}>
               <span className={css.cardTextSpan}>Rating</span>
@@ -51,12 +53,13 @@ export default function ModalMovieCard({ movie }) {
               {overview}
             </div>
           </div>
-          <div>
-            <button>Add to Watched</button>
-            <button>Add to Queue</button>
+          <div className={css.button__box}>
+            <Button positionClass={css.modal__btn} text={"Add to Watched"} />
+            <Button positionClass={css.modal__btn} text={"Add to Queue"} />
           </div>
         </div>
       </article>
+      <SlClose className={css.closeIcon} onClick={onClose} />
     </div>
   );
 }

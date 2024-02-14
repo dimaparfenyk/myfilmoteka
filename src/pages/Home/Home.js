@@ -3,39 +3,37 @@ import { ThreeCircles } from "react-loader-spinner";
 import api from "../../services/api";
 import MoviesList from "../../components/MoviesList";
 import css from "./Home.module.css";
-import Modal from "../../components/Modal";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
-  const [isPreload, setIsPreload] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     api
       .getTrendingMovies()
       .then((res) => {
-        setIsPreload(true);
         if (!res) return;
         setMovies([...res.results]);
+        setIsLoading(false);
       })
-      .catch((error) => console.log(error))
-      .finally(() => setIsPreload(false));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <div className="container">
       <div className={css.movies__wrapper}>
-        <MoviesList movies={movies} />
-      </div>
-      {isPreload && (
-        <Modal>
+        {isLoading ? (
           <ThreeCircles
             visible={true}
             color="#ff6b01"
             ariaLabel="three-circles-loading"
             wrapperClass={css.spinnerBox}
           />
-        </Modal>
-      )}
+        ) : (
+          <MoviesList movies={movies} />
+        )}
+      </div>
     </div>
   );
 }

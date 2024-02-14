@@ -1,0 +1,23 @@
+.primary__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 180px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff6b01;
+  border: 2px solid #ff6b01;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: Nunito Sans;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+  cursor: pointer;
+}
+
+.active__btn {
+  color: #212121;
+  background-color: #fff;
+}

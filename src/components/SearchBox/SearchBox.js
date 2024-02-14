@@ -6,6 +6,7 @@ export default function SearchBox({ value, onChange }) {
     <div className={css.searchBox}>
       <div className={css.search__wrapper}>
         <input
+          placeholder="Search movie"
           className={css.search__movie}
           type="text"
           value={value}

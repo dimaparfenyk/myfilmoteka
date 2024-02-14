@@ -1,9 +1,11 @@
 .movieItem {
-  flex-basis: calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 40px) / 3);
 
   padding: 6px;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -11,6 +13,14 @@
   &:hover {
     box-shadow: 0 0 12px;
   }
+}
+
+.movie__link {
+  flex-grow: 1;
+}
+
+.movie__meta {
+  display: flex;
 }
 
 .genres__list {
@@ -22,7 +32,7 @@
 }
 
 .genre__item + .genre__item {
-  margin-left: 8px;
+  margin-left: 12px;
 }
 
 .vote__item {
