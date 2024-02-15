@@ -32,24 +32,25 @@ export default function Cast() {
           ariaLabel="three-circles-loading"
           wrapperClass="spinnerBox"
         />
-      ) : (
+      ) : cast.length > 0 ? (
         <ul className={css.cast__list}>
-          {cast.length > 0 &&
-            cast.slice(0, 18).map(({ id, name, character, profile_path }) => (
-              <li key={id} className={css.cast__item}>
-                <img
-                  src={
-                    profile_path
-                      ? `https://image.tmdb.org/t/p/w500${profile_path}`
-                      : defaultphoto
-                  }
-                  alt={`${name}`}
-                />
-                <p className={css.cast__text}>{name}</p>
-                <p className={css.cast__text}>Role: {character}</p>
-              </li>
-            ))}
+          {cast.slice(0, 18).map(({ id, name, character, profile_path }) => (
+            <li key={id} className={css.cast__item}>
+              <img
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                    : defaultphoto
+                }
+                alt={`${name}`}
+              />
+              <p className={css.cast__text}>{name}</p>
+              <p className={css.cast__text}>Role: {character}</p>
+            </li>
+          ))}
         </ul>
+      ) : (
+        <div className={css.cast__list}>There are no cast for this movie</div>
       )}
     </Wrapper>
   );

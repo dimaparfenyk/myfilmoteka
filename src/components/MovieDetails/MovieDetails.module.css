@@ -32,7 +32,7 @@
   display: flex;
   gap: 40px;
   margin-bottom: 60px;
-  background: rgba(0, 0, 0, 0.56);
+  background: rgba(40, 40, 40, 0.7);
   padding: 10px 0 20px;
 }
 
@@ -58,6 +58,7 @@
   flex-direction: column;
   max-width: 50%;
   min-height: 100%;
+  gap: 40px;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.6;
@@ -70,6 +71,7 @@
 
 .movie__poster {
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .movie__subtitle {

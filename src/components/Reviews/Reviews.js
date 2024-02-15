@@ -40,7 +40,9 @@ export default function Reviews() {
           ))}
         </ul>
       ) : (
-        <div>There are no reviews for this film.</div>
+        <div className={css.reviews__list}>
+          There are no reviews for this film.
+        </div>
       )}
     </Wrapper>
   );

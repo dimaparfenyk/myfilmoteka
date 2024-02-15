@@ -74,6 +74,7 @@
   width: 24px;
   fill: #8c8c8c;
   height: 24px;
+  cursor: pointer;
 }
 
 .modal__btn + .modal__btn {

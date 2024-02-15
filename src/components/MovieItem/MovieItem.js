@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { nanoid } from "nanoid";
 import css from "./MovieItem.module.css";
+import defaultMovie from "../../images/default-movie.png";
 
 export default function MovieItem({ movie, genres }) {
   const {
@@ -29,7 +30,11 @@ export default function MovieItem({ movie, genres }) {
       >
         <img
           className={css.movie__poster}
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : defaultMovie
+          }
           alt={title || name}
         />
         <h3 className={css.card__title}>{title || name}</h3>

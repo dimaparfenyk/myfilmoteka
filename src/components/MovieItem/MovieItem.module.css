@@ -44,6 +44,7 @@
 }
 
 .movie__poster {
+  width: 100%;
   margin-bottom: 8px;
 }
 

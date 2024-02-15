@@ -1,6 +1,7 @@
 import { SlClose } from "react-icons/sl";
 import css from "./MovieCard.module.css";
 import Button from "../Button";
+import defaultMovie from "../../images/default-movie.png";
 
 export default function ModalMovieCard({ movie, onClose }) {
   const {
@@ -19,7 +20,11 @@ export default function ModalMovieCard({ movie, onClose }) {
       <article className={css.movie__article}>
         <div className={css.modal__imgBox}>
           <img
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                : defaultMovie
+            }
             alt={title || name}
           />
         </div>

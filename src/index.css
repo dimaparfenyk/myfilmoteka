@@ -12,7 +12,8 @@ body {
   scrollbar-gutter: stable;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./images/ironman.jpg);
-
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: sans-serif;
   line-height: 1.5;
 }
