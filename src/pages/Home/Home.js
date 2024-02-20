@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import api from "../../services/api";
 import MoviesList from "../../components/MoviesList";
@@ -6,52 +6,30 @@ import css from "./Home.module.css";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [showLoadMore, setShowLoadMore] = useState(false);
-  const galleryRef = useRef(null);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
-    setShowLoadMore(false);
 
     api
-      .getPopularMovies(page)
-      .then(({ results }) => {
-        if (!results) return;
+      .getPopularMovies(currentPage)
+      .then((res) => {
+        if (!res.results) return;
 
-        page === 1
-          ? setMovies([...results])
-          : setMovies((prev) => [...prev, ...results]);
-
-        setShowLoadMore(true);
+        setMovies(res.results);
+        res.total_pages > 500
+          ? setTotalPages(500)
+          : setTotalPages(res.total_pages);
       })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
-  }, [page]);
-
-  function loadMore() {
-    setPage((page) => page + 1);
-    scrollToFirstMovieCard();
-  }
-
-  function scrollToFirstMovieCard() {
-    const movieCardHeight =
-      galleryRef.current?.firstElementChild.getBoundingClientRect().height;
-
-    // console.log("movieCardHeight :>> ", movieCardHeight);
-    // window.scrollBy({
-    //   top: movieCardHeight * 2,
-    //   behavior: "smooth",
-    // });
-
-    galleryRef.current.scrollIntoView({ behavior: "smooth" });
-  }
+  }, [currentPage]);
 
   return (
     <div className="container">
       <div className={css.movies__wrapper}>
-        <MoviesList movies={movies} ref={galleryRef} />
         {isLoading && (
           <ThreeCircles
             visible={true}
@@ -60,7 +38,11 @@ export default function Home() {
             wrapperClass={css.spinnerBox}
           />
         )}
-        {showLoadMore && <button onClick={loadMore}>Load More</button>}
+        <MoviesList
+          movies={movies}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </div>
   );

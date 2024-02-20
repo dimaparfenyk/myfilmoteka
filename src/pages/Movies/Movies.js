@@ -6,12 +6,20 @@ import MoviesList from "../../components/MoviesList";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get("movieName") ?? "";
 
   useEffect(() => {
-    api.getMovieByQuery(movieName).then((res) => setMovies(res.results));
-  }, [movieName]);
+    api.getMovieByQuery(movieName, currentPage).then((res) => {
+      setMovies(res.results);
+      res.total_pages > 500
+        ? setTotalPages(500)
+        : setTotalPages(res.total_pages);
+    });
+  }, [currentPage, movieName]);
 
   function updateQueryString(movieName) {
     const nextParams = movieName !== "" ? { movieName } : {};
@@ -26,7 +34,13 @@ export default function Movies() {
   return (
     <div className="container">
       <SearchBox value={movieName} onChange={updateQueryString} />
-      {movies.length > 0 && <MoviesList movies={visibleMovies()} />}
+      {movies.length > 0 && (
+        <MoviesList
+          movies={visibleMovies()}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      )}
     </div>
   );
 }

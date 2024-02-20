@@ -3,4 +3,9 @@
   flex-wrap: wrap;
   column-gap: 20px;
   row-gap: 30px;
+  margin-bottom: 60px;
+}
+
+.paginate__box {
+  display: flex;
 }
