@@ -3,11 +3,11 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  background-attachment: fixed;
   margin: 0;
   scrollbar-gutter: stable;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -83,6 +83,8 @@ input {
   }
 }
 
+/* Buttons Styles */
+
 header li .active {
   color: #ff6b01;
   border-bottom: 4px solid #ff6b01;
@@ -126,6 +128,8 @@ header li .active {
   display: flex;
 }
 
+/* Pagination Styles */
+
 .pagination {
   display: flex;
   margin: 0 auto;
@@ -160,4 +164,11 @@ header li .active {
 
 .page-item.active .page-link {
   color: #fff;
+}
+
+.break-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
