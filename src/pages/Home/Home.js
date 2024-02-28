@@ -3,7 +3,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import api from "../../services/api";
 import MoviesList from "../../components/MoviesList";
 import Pagination from "../../components/Pagination";
-import { ImArrowUp } from "react-icons/im";
+import TopUpBtn from "../../components/TopUpBtn";
 import css from "./Home.module.css";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [btnUpShown, setBtnUpShown] = useState(false);
-  const movieGallery = useRef(null);
+  const movieBox = useRef(null);
 
   useEffect(() => {
     // Функция для обработки события скролла
@@ -39,13 +39,11 @@ export default function Home() {
       .finally(() => setIsLoading(false));
   }, [currentPage]);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div className="container">
-      <div className={css.movies__wrapper} ref={movieGallery}>
+      <div className={css.movies__wrapper} ref={movieBox}>
         {isLoading && (
           <ThreeCircles
             visible={true}
@@ -57,15 +55,11 @@ export default function Home() {
         <MoviesList movies={movies} />
         <Pagination
           onPageChange={setCurrentPage}
-          domRef={movieGallery}
+          domRef={movieBox}
           currentPage={currentPage}
         />
 
-        {btnUpShown && (
-          <button className={css.arr__up} onClick={scrollToTop}>
-            <ImArrowUp className={css.up__icon} />
-          </button>
-        )}
+        {btnUpShown && <TopUpBtn scrollUp={scrollToTop} />}
       </div>
     </div>
   );

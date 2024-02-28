@@ -1,25 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
-import { nanoid } from "nanoid";
 import css from "./MovieItem.module.css";
 import defaultMovie from "../../images/default-movie.png";
 
 export default function MovieItem({ movie, genres }) {
-  const {
-    genre_ids,
-    poster_path,
-    title,
-    name,
-    id,
-    release_date,
-    vote_average,
-  } = movie;
+  const { poster_path, title, name, id, release_date, vote_average } = movie;
 
   const location = useLocation();
   const linkPath = location.pathname.includes("/movies")
     ? `${id}`
-    : `movies/${id}`;
-
-  const currGenres = genres.filter((item) => genre_ids.includes(item.id));
+    : `/movies/${id}`;
 
   return (
     <li className={css.movieItem}>
@@ -41,11 +30,13 @@ export default function MovieItem({ movie, genres }) {
       </Link>
 
       <ul className={css.genres__list}>
-        {currGenres.slice(0, 3).map(({ name }) => (
-          <li key={nanoid()} className={css.genre__item}>
-            {name}
-          </li>
-        ))}
+        {genres
+          ? genres.slice(0, 3).map(({ name }) => (
+              <li key={name} className={css.genre__item}>
+                {name}
+              </li>
+            ))
+          : null}
         <li className={css.genre__item}>| {release_date.split("-")[0]}</li>
         <li className={css.vote__item}>{vote_average.toFixed(1)}</li>
       </ul>

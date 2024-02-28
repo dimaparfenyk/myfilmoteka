@@ -1,0 +1,33 @@
+/* Arrow Up Styles */
+
+.arr__up {
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  z-index: 5;
+  cursor: pointer;
+  background-color: #ff6b01;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: all 0.3s linear, box-shadow 0.25s linear;
+
+  &:hover {
+    background-color: #ff9e01;
+  }
+}
+
+.up__icon {
+  fill: #fff;
+  width: 100%;
+  height: 25px;
+}

@@ -19,6 +19,9 @@ export default function Header() {
             <li className={css.header__item}>
               <ButtonLink to="/movies">Movies</ButtonLink>
             </li>
+            <li className={css.header__item}>
+              <ButtonLink to="/library">Library</ButtonLink>
+            </li>
           </ul>
         </nav>
       </div>

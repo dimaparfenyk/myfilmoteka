@@ -80,3 +80,7 @@
 .modal__btn + .modal__btn {
   margin-left: 20px;
 }
+
+.add__btn {
+  min-width: 200px;
+}

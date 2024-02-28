@@ -17,7 +17,7 @@ export default function MovieDetails() {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? "/movies");
-  const outletBoxRef = useRef(null);
+  const articleRef = useRef(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,13 +25,19 @@ export default function MovieDetails() {
       .getDetais(movieId)
       .then((res) => {
         if (!res) return;
+
         setMovie(res);
       })
       .finally(() => setIsLoading(false));
   }, [movieId]);
 
   function scrollSmooth() {
-    outletBoxRef.current?.scrollIntoView({ behavior: "smooth" });
+    const scrollHeight = articleRef.current?.getBoundingClientRect().height;
+
+    window.scrollTo({
+      top: scrollHeight * 1.5,
+      behavior: "smooth",
+    });
   }
 
   const { id, title, name, vote_average, release_date, genres, overview } =
@@ -57,7 +63,7 @@ export default function MovieDetails() {
       ) : (
         id && (
           <div className={css.movie__container}>
-            <article className={css.movie__article}>
+            <article className={css.movie__article} ref={articleRef}>
               <div
                 className={css.poster__box}
                 onClick={() => setModalShown(true)}
@@ -113,7 +119,7 @@ export default function MovieDetails() {
                 </ul>
               </div>
             </article>
-            <div id="outlet-box" ref={outletBoxRef}>
+            <div id="outlet-box">
               <Outlet />
             </div>
           </div>

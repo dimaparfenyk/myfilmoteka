@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { SlClose } from "react-icons/sl";
 import css from "./MovieCard.module.css";
-import Button from "../Button";
 import defaultMovie from "../../images/default-movie.png";
+import Button from "../Button/Button";
 
 export default function ModalMovieCard({ movie, onClose }) {
   const {
+    id,
     title,
     name,
     poster_path,
@@ -14,6 +16,36 @@ export default function ModalMovieCard({ movie, onClose }) {
     genres,
   } = movie;
   const release_year = release_date.split("-")[0];
+
+  const [isMovieAddToLS, setIsMovieAddToLS] = useState(() => {
+    const parsedMovies = JSON.parse(localStorage.getItem("watched")) || [];
+    return parsedMovies.some((m) => m.id === id);
+  });
+
+  function toggleMovieToLS() {
+    setIsMovieAddToLS((prev) => {
+      if (prev) {
+        removeMovieFromLS();
+      } else {
+        addMovieToLS();
+      }
+      return !prev;
+    });
+  }
+
+  function addMovieToLS() {
+    const parsedMovies = JSON.parse(localStorage.getItem("watched")) || [];
+    if (!parsedMovies.some((m) => m.id === id)) {
+      parsedMovies.push(movie);
+      localStorage.setItem("watched", JSON.stringify(parsedMovies));
+    }
+  }
+
+  function removeMovieFromLS() {
+    const parsedMovies = JSON.parse(localStorage.getItem("watched")) || [];
+    const updatedMovies = parsedMovies.filter((m) => m.id !== id);
+    localStorage.setItem("watched", JSON.stringify(updatedMovies));
+  }
 
   return (
     <div className={css.modal__wrapper}>
@@ -59,8 +91,11 @@ export default function ModalMovieCard({ movie, onClose }) {
             </div>
           </div>
           <div className={css.button__box}>
-            <Button positionClass={css.modal__btn} text={"Add to Watched"} />
-            <Button positionClass={css.modal__btn} text={"Add to Queue"} />
+            <Button
+              onClick={toggleMovieToLS}
+              text={isMovieAddToLS ? "Remove" : "Add To Library"}
+              positionClass={css.add__btn}
+            />
           </div>
         </div>
       </article>
