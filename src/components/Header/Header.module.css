@@ -20,10 +20,35 @@
 }
 
 .header__list {
-  display: flex;
-  margin-left: auto;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header__list {
+    display: flex;
+    margin-left: auto;
+  }
 }
 
 .header__item + .header__item {
   margin-left: 20px;
+}
+
+.burger__btn {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .burger__btn {
+    display: none;
+  }
+}
+
+.burger__icon {
+  fill: #fff;
+  width: 24px;
+  height: 24px;
 }

@@ -1,14 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
+import { ImBin } from "react-icons/im";
 import css from "./MovieItem.module.css";
 import defaultMovie from "../../images/default-movie.png";
 
-export default function MovieItem({ movie, genres }) {
+export default function MovieItem({ movie, genres, removeMovieFromLS }) {
   const { poster_path, title, name, id, release_date, vote_average } = movie;
-
   const location = useLocation();
   const linkPath = location.pathname.includes("/movies")
     ? `${id}`
     : `/movies/${id}`;
+
+  const isCurrentPageLibrary = location.pathname === "/library";
 
   return (
     <li className={css.movieItem}>
@@ -40,6 +42,14 @@ export default function MovieItem({ movie, genres }) {
         <li className={css.genre__item}>| {release_date.split("-")[0]}</li>
         <li className={css.vote__item}>{vote_average.toFixed(1)}</li>
       </ul>
+      {isCurrentPageLibrary && (
+        <button className={css.remove__btn}>
+          <ImBin
+            className={css.removeIcon}
+            onClick={() => removeMovieFromLS()}
+          />
+        </button>
+      )}
     </li>
   );
 }
