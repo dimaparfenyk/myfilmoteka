@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { ImCancelCircle } from "react-icons/im";
+import { SlClose } from "react-icons/sl";
 import css from "./MobileMenu.module.css";
 
 function MobileMenu({ toggleMobileMenuVisibility }) {
@@ -31,7 +31,7 @@ function MobileMenu({ toggleMobileMenuVisibility }) {
         </li>
       </ul>
       <button className={css.close__btn} onClick={closeMenu}>
-        <ImCancelCircle />
+        <SlClose className={css.close__icon} />
       </button>
     </div>
   );

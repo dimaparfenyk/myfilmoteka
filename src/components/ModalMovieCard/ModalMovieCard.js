@@ -90,13 +90,12 @@ export default function ModalMovieCard({ movie, onClose }) {
               {overview}
             </div>
           </div>
-          <div className={css.button__box}>
-            <Button
-              onClick={toggleMovieToLS}
-              text={isMovieAddToLS ? "Remove" : "Add To Library"}
-              positionClass={css.add__btn}
-            />
-          </div>
+
+          <Button
+            onClick={toggleMovieToLS}
+            text={isMovieAddToLS ? "Remove" : "Add To Library"}
+            positionClass={css.add__btn}
+          />
         </div>
       </article>
       <SlClose className={css.closeIcon} onClick={onClose} />

@@ -99,7 +99,7 @@ header li .active {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  min-width: 160px;
 
   text-transform: uppercase;
   color: #fff;
@@ -111,9 +111,14 @@ header li .active {
   font-family: Nunito Sans;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+}
+
+.styled__link:hover,
+.styled__link:focus {
+  background-color: #da5c02;
 }
 
 .styled__link.active {
@@ -126,49 +131,4 @@ header li .active {
   width: 100px;
   height: 100px;
   display: flex;
-}
-
-/* Pagination Styles */
-
-.pagination {
-  display: flex;
-  margin: 0 auto;
-}
-
-.page-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 5px;
-  border: 2px solid #ff6b01;
-  background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.page-item.active {
-  background-color: #ff6b01;
-}
-
-.page-item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.page-link {
-  padding: 10px 16px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  color: #ff6b01;
-}
-
-.page-item.active .page-link {
-  color: #fff;
-}
-
-.break-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
 }

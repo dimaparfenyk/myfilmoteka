@@ -1,3 +1,60 @@
 .paginate__box {
   display: flex;
 }
+
+.pagination {
+  display: flex;
+  margin: 0 auto;
+}
+
+.page_item,
+.break_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.page_item:not(:last-child) {
+  margin-right: 5px;
+}
+@media screen and (min-width: 768px) {
+  .page_item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.page_link,
+.break_link,
+.arrow__page_link {
+  padding: 10px 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  color: #ff6b01;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page_link:hover,
+.page_link:focus {
+  color: #da5c02;
+  border-bottom: 3px solid #da5c02;
+}
+
+.page_item.active .page_link {
+  color: #fff;
+  border-bottom: 3px solid #da5c02;
+}
+
+.break_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .break_item {
+    margin-right: 10px;
+  }
+}

@@ -22,7 +22,7 @@
   transition: all 0.3s linear, box-shadow 0.25s linear;
 
   &:hover {
-    background-color: #ff9e01;
+    background-color: #da5c02;
   }
 }
 

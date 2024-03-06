@@ -24,14 +24,6 @@
   flex-grow: 1;
 }
 
-.button__box {
-  display: flex;
-}
-
-.button__box:first-child {
-  margin-right: 20px;
-}
-
 .movieCard_navList {
   display: flex;
 }
@@ -75,12 +67,14 @@
   fill: #8c8c8c;
   height: 24px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal__btn + .modal__btn {
-  margin-left: 20px;
+.closeIcon:hover,
+.closeIcon:focus {
+  fill: #da5c02;
 }
 
 .add__btn {
-  min-width: 200px;
+  margin-top: 20px;
 }

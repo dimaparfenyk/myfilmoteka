@@ -80,30 +80,29 @@ export default function MovieDetails() {
               </div>
               <div className={css.movie__meta}>
                 <div className={css.inner__movie_meta}>
-                  <h2 className={css.movie__subtitle}>{title}</h2>
+                  <h2 className={css.movie__subtitle}>
+                    {title} ({release_date.split("-")[0]})
+                  </h2>
                   <h3>About</h3>
                   <p className={css.overview__text}>{overview}</p>
-                  <div className={css.movie__details_box}>
-                    <ul className={css.genres__list}>
-                      {genres.slice(0, 3).map((genre, index) =>
-                        index === 2 ? (
-                          <li key={index} className={css.genreName}>
-                            {genre.name}
-                          </li>
-                        ) : (
-                          <li key={index} className={css.genreName}>
-                            {genre.name + ","}
-                          </li>
-                        )
-                      )}
-                    </ul>
-                    <p className={`${css.first__paragraph} ${css.movie__text}`}>
-                      {release_date.split("-")[0]}
-                    </p>
-                    <p className={`${css.accent__box} ${css.movie__text}`}>
-                      {vote_average.toFixed(1)}
-                    </p>
-                  </div>
+                  <ul className={css.genres__list}>
+                    {genres.slice(0, 3).map((genre, index) =>
+                      index === 2 ? (
+                        <li key={index} className={css.genre_item}>
+                          {genre.name}
+                        </li>
+                      ) : (
+                        <li key={index} className={css.genre_item}>
+                          {genre.name + ","}
+                        </li>
+                      )
+                    )}
+                    <li key={vote_average} className={css.genre_item}>
+                      <p className={`${css.accent__box} ${css.movie__text}`}>
+                        {vote_average.toFixed(1)}
+                      </p>
+                    </li>
+                  </ul>
                 </div>
                 <ul className={css.movie__navList}>
                   <li className={css.movie__navItem} onClick={scrollSmooth}>

@@ -3,6 +3,7 @@ import ReactPaginate from "react-paginate";
 import css from "./Pagination.module.css";
 
 const Pagination = ({ onPageChange, currentPage, domRef }) => {
+  const isMobile = window.innerWidth < 575;
   const handlePageClick = (event) => {
     const selectedPage = event.selected + 1;
     onPageChange(selectedPage);
@@ -16,24 +17,24 @@ const Pagination = ({ onPageChange, currentPage, domRef }) => {
   return (
     <div className={css.paginate__box}>
       <ReactPaginate
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        marginPagesDisplayed={3}
+        pageRangeDisplayed={isMobile ? 3 : 5}
+        marginPagesDisplayed={isMobile ? 1 : 3}
         pageCount={500}
         forcePage={currentPage - 1}
-        previousLabel="< previous"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
+        previousLabel="<"
+        pageClassName={css.page_item}
+        pageLinkClassName={css.page_link}
+        previousClassName={css.page_item}
+        previousLinkClassName={css.arrow__page_link}
+        nextClassName={css.page_item}
+        nextLinkClassName={css.arrow__page_link}
         breakLabel="..."
-        breakClassName="break-item"
-        breakLinkClassName="page-link"
-        containerClassName="pagination"
-        activeClassName="active"
+        breakClassName={css.break_item}
+        breakLinkClassName={css.break_link}
+        containerClassName={css.pagination}
+        activeClassName={css.active}
         renderOnZeroPageCount={null}
       />
     </div>

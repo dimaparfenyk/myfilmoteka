@@ -1,10 +1,22 @@
 .close__btn {
-  position: relative;
+  position: absolute;
   top: 20px;
-  right: 20px;
+  right: 40px;
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.close__icon {
+  width: 24px;
+  height: 24px;
+  fill: #999999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close__icon:hover,
+.close__icon:focus {
+  fill: #da5c02;
 }
 
 .mob__menu {
@@ -17,7 +29,7 @@
   padding: 40px 40px 40px 120px;
   opacity: 0;
   transform: translate(100%);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mob__menu.show {
@@ -50,16 +62,11 @@
 
 .mob__nav_item a {
   color: #ff6b01;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:visited {
-    text-decoration: none;
-    color: #ff6b01;
-  }
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: #ff6b01;
+    color: #da5c02;
   }
 }
