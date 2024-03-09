@@ -10,7 +10,7 @@
   z-index: 1200;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .modal {
