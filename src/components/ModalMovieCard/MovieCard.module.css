@@ -3,21 +3,46 @@
   max-width: 814px;
   margin: 0 auto;
   background: white;
-  padding: 16px 40px;
+  padding: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__wrapper {
+    padding: 16px 40px;
+  }
 }
 
 .movie__article {
   display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.modal__imgBox {
-  width: 50%;
+@media screen and (min-width: 768px) {
+  .movie__article {
+    flex-direction: row;
+  }
+}
+
+.modal__imgBox img {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__imgBox {
+    width: 50%;
+  }
 }
 .modal__MovieMeta {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__MovieMeta {
+    width: 50%;
+  }
 }
 
 .right__moviemeta {
@@ -30,44 +55,63 @@
 
 .cardTitle {
   margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 20px;
+  line-height: 28px;
+}
+@media screen and (min-width: 768px) {
+  .cardTitle {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }
 .accent__box {
   display: inline-block;
   color: #fff;
   background-color: #ff6b01;
   padding: 0 10px;
+  margin-left: 8px;
   border-radius: 5px;
 }
-.cardTextSpan {
-  margin-right: 40px;
+
+.MovieMeta__item {
+  margin-bottom: 10px;
   color: #8c8c8c;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.33;
 }
-
-.MovieMeta__box {
-  margin-bottom: 10px;
-}
 .cardSubtitle {
+  color: #ff6b01;
   margin-bottom: 8px;
 }
+.meta__text {
+  display: inline-block;
+  color: #000;
+}
 
-.genreName:not(:last-child) {
+.meta__text:not(:last-child) {
   margin-right: 4px;
+}
+.meta__text:first-child {
+  margin-left: 8px;
 }
 
 .closeIcon {
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 0;
+  top: 0;
   width: 24px;
   fill: #8c8c8c;
   height: 24px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .closeIcon {
+    right: 8px;
+    top: 8px;
+  }
 }
 
 .closeIcon:hover,

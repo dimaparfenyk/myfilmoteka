@@ -28,7 +28,9 @@ export default function MovieItem({ movie, genres, removeMovieFromLS }) {
           }
           alt={title || name}
         />
-        <h3 className={css.card__title}>{title || name}</h3>
+        <h3 className={css.card__title}>
+          {title || name} ({release_date.split("-")[0]})
+        </h3>
       </Link>
 
       <ul className={css.genres__list}>
@@ -39,7 +41,7 @@ export default function MovieItem({ movie, genres, removeMovieFromLS }) {
               </li>
             ))
           : null}
-        <li className={css.genre__item}>| {release_date.split("-")[0]}</li>
+
         <li className={css.vote__item}>{vote_average.toFixed(1)}</li>
       </ul>
       {isCurrentPageLibrary && (

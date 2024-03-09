@@ -31,6 +31,21 @@ export default function MovieDetails() {
       .finally(() => setIsLoading(false));
   }, [movieId]);
 
+  useEffect(() => {
+    // Функция для блокировки скролла
+    function disableScroll() {
+      document.body.style.overflow = "hidden";
+    }
+    // Функция для разблокировки скролла
+    function enableScroll() {
+      document.body.style.overflow = "auto";
+    }
+    // Добавить обработчики событий при открытии модального окна
+    modalShown ? disableScroll() : enableScroll();
+
+    return () => enableScroll();
+  }, [modalShown]);
+
   function scrollSmooth() {
     const scrollHeight = articleRef.current?.getBoundingClientRect().height;
 

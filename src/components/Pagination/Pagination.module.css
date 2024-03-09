@@ -34,6 +34,9 @@
   color: #ff6b01;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.break_link {
+  padding: 10px 0 0;
+}
 
 .page_link:hover,
 .page_link:focus {

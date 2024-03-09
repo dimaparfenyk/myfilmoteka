@@ -37,20 +37,20 @@
 
 .genres__list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .genre__item {
   color: #ff6b01;
 }
 
-.genre__item + .genre__item {
-  margin-left: 12px;
+.genre__item:not(:last-child) {
+  margin-right: 12px;
 }
 
 .vote__item {
   color: #fff;
   background-color: #ff6b01;
-  margin-left: 8px;
   padding: 0 10px;
   border-radius: 5px;
 }

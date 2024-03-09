@@ -34,7 +34,6 @@ export default function Modal({ children, onClose, bg }) {
       className={css.overlay}
       onClick={onOverlayClick}
       style={{
-        background: "rgba(47, 48, 58, 1)",
         backgroundImage: `linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), ${bg}`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

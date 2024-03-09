@@ -63,28 +63,33 @@ export default function ModalMovieCard({ movie, onClose }) {
         <div className={css.modal__MovieMeta}>
           <div className={css.right__moviemeta}>
             <h3 className={css.cardTitle}>{title}</h3>
-            <div className={css.MovieMeta__box}>
-              <span className={css.cardTextSpan}>Rating</span>
-              <span className={css.accent__box}>{vote_average.toFixed(1)}</span>
-            </div>
-            <div className={css.MovieMeta__box}>
-              <span className={css.cardTextSpan}>Genre</span>
-              {genres.slice(0, 3).map((genre, index) =>
-                index === 2 ? (
-                  <span key={index} className={css.genreName}>
-                    {genre.name}
-                  </span>
-                ) : (
-                  <span key={index} className={css.genreName}>
-                    {genre.name + ","}
-                  </span>
-                )
-              )}
-            </div>
-            <div className={css.MovieMeta__box}>
-              <span className={css.cardTextSpan}>Release</span>
-              <span>{release_year}</span>
-            </div>
+            <ul>
+              <li className={css.MovieMeta__item}>
+                Rating
+                <span className={css.accent__box}>
+                  {vote_average.toFixed(1)}
+                </span>
+              </li>
+              <li className={css.MovieMeta__item}>
+                Genre
+                {genres.slice(0, 3).map((genre, index) =>
+                  index === 2 ? (
+                    <p key={index} className={css.meta__text}>
+                      {genre.name}
+                    </p>
+                  ) : (
+                    <p key={index} className={css.meta__text}>
+                      {genre.name + ","}
+                    </p>
+                  )
+                )}
+              </li>
+              <li className={css.MovieMeta__item}>
+                Release
+                <p className={css.meta__text}>{release_year}</p>
+              </li>
+            </ul>
+
             <div className={css.overview__box}>
               <h4 className={css.cardSubtitle}>About</h4>
               {overview}
