@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/myfilmoteka/static/css/main.a89f1300.css",
-    "main.js": "/myfilmoteka/static/js/main.85ad8f5b.js",
+    "main.css": "/myfilmoteka/static/css/main.8e4ac31b.css",
+    "main.js": "/myfilmoteka/static/js/main.2b49a237.js",
     "static/media/ironman.jpg": "/myfilmoteka/static/media/ironman.252751d16d9d772990b3.jpg",
     "static/media/avatar.png": "/myfilmoteka/static/media/avatar.4440c226316335729b24.png",
     "index.html": "/myfilmoteka/index.html",
-    "main.a89f1300.css.map": "/myfilmoteka/static/css/main.a89f1300.css.map",
-    "main.85ad8f5b.js.map": "/myfilmoteka/static/js/main.85ad8f5b.js.map"
+    "main.8e4ac31b.css.map": "/myfilmoteka/static/css/main.8e4ac31b.css.map",
+    "main.2b49a237.js.map": "/myfilmoteka/static/js/main.2b49a237.js.map"
   },
   "entrypoints": [
-    "static/css/main.a89f1300.css",
-    "static/js/main.85ad8f5b.js"
+    "static/css/main.8e4ac31b.css",
+    "static/js/main.2b49a237.js"
   ]
 }
