@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useParams, Outlet, useLocation, NavLink } from "react-router-dom";
+import { useParams, Outlet, useLocation } from "react-router-dom";
 import { ThreeCircles } from "react-loader-spinner";
 
 import api from "../../services/api";
@@ -121,14 +121,19 @@ export default function MovieDetails() {
                 </div>
                 <ul className={css.movie__navList}>
                   <li className={css.movie__navItem} onClick={scrollSmooth}>
-                    <NavLink to="cast" className="styled__link">
+                    <ButtonLink to="cast" propClass={css.primary__btn}>
                       Cast
-                    </NavLink>
+                    </ButtonLink>
                   </li>
-                  <li className={css.movie__navItem} onClick={scrollSmooth}>
+                  {/* <li className={css.movie__navItem} onClick={scrollSmooth}>
                     <NavLink to="reviews" className="styled__link">
                       Reviews
                     </NavLink>
+                  </li> */}
+                  <li className={css.movie__navItem} onClick={scrollSmooth}>
+                    <ButtonLink to="reviews" propClass={css.primary__btn}>
+                      Reviews
+                    </ButtonLink>
                   </li>
                 </ul>
               </div>

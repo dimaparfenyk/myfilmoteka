@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .searchBox {
   display: flex;
   margin-bottom: 60px;
@@ -13,16 +15,16 @@
 .search__movie {
   min-width: 300px;
   height: 40px;
-  color: #fff;
+  color: var(--light-text-color);
   background-color: rgba(0, 0, 0, 0.5);
-  border: 2px solid #ff6b01;
+  border: 2px solid var(--button-border-color);
   border-radius: 32px;
   outline: none;
   padding: 8px 32px 8px 16px;
   font-size: 18px;
   font-weight: 400;
   line-height: 16px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
 }
 
 .search__wrapper button {
@@ -33,5 +35,5 @@
 .search__icon {
   width: 24px;
   height: 24px;
-  fill: #fff;
+  fill: var(--light-text-color);
 }

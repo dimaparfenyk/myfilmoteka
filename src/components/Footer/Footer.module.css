@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .footer {
   background-color: rgba(0, 0, 0, 0.56);
 }
@@ -12,7 +14,7 @@
 }
 
 .footer__developerLink {
-  color: #ff6b08;
+  color: var(--primary-button-color);
 }
 
 .footer__icon {
@@ -20,7 +22,7 @@
   animation-duration: 1000ms;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  color: #ff6b08;
+  color: var(--primary-button-color);
   margin: 0 8px;
 }
 

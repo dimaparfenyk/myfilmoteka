@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .movie__container {
   margin-top: 48px;
 }
@@ -6,31 +8,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 180px;
+  width: 160px;
   text-transform: uppercase;
-  color: #fff;
-  background-color: #ff6b01;
-  border: 2px solid #ff6b01;
-  border-radius: 20px;
+  color: var(--light-text-color);
+  background-color: var(--primary-button-color);
+  border: 2px solid var(--button-border-color);
+  border-radius: var(--border-radius-button);
   padding: 10px 20px;
-  font-family: Nunito Sans;
+  font-family: var(--font-family-primary);
   font-size: 12px;
-  font-weight: 700;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: var(--font-weight-bold);
+  transition: var(--transition-primary);
   box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
   cursor: pointer;
 }
 
 .primary__btn:hover,
 .primary__btn:focus {
-  background-color: #da5c02;
+  background-color: var(--button-accent-bg);
 }
 
 .subpage__title {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 600;
-  color: #fff;
+  color: var(--light-text-color);
 }
 
 .movie__article {
@@ -52,12 +54,12 @@
 
 @media screen and (min-width: 1200px) {
   .movie__article {
-    padding: 10px 0 20px;
+    padding: 10px 0 20px 10px;
   }
 }
 
 .inner__movie_meta h3 {
-  color: #ff6b01;
+  color: var(--primary-button-color);
   margin-bottom: 10px;
 }
 
@@ -85,7 +87,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.6;
-  color: #fff;
+  color: var(--light-text-color);
 }
 @media screen and (min-width: 768px) {
   .movie__meta {
@@ -104,7 +106,7 @@
 .movie__subtitle {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #fff;
+  color: var(--light-text-color);
 }
 @media screen and (min-width: 768px) {
   .movie__subtitle {
@@ -122,14 +124,14 @@
 .overview__text {
   margin-bottom: 20px;
   text-indent: 20px;
-  color: #fff;
-  font-size: 16px;
+  color: var(--light-text-color);
+  font-size: var(--mob-text-font-size);
   font-weight: 500;
   line-height: 1.66;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .overview__text {
-    font-size: 18px;
+    font-size: var(--main-text-font-size);
   }
 }
 
@@ -144,13 +146,13 @@
 
 .accent__box {
   display: inline-block;
-  background-color: #ff6b01;
+  background-color: var(--primary-button-color);
   padding: 0 10px;
   border-radius: 5px;
 }
 
 .accent__box.movie__text {
-  color: #fff;
+  color: var(--light-text-color);
 }
 
 .movie__navItem + .movie__navItem {

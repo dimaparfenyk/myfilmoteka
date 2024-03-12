@@ -1,0 +1,15 @@
+:root {
+  --bg-color: rgba(47, 48, 58, 0.3);
+  --dark-text-color: #212121;
+  --light-text-color: #fff;
+  --primary-button-color: #ff6b01;
+  --secondary-button-color: #fff;
+  --button-accent-bg: #da5c02;
+  --button-border-color: #ff6b01;
+  --font-family-primary: "Nunito Sans";
+  --font-weight-bold: 700;
+  --border-radius-button: 20px;
+  --transition-primary: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --mob-text-font-size: 16px;
+  --main-text-font-size: 20px;
+}

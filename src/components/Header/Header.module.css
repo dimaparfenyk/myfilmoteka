@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .header {
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
@@ -9,7 +11,7 @@
   display: flex;
   align-items: center;
   background: inherit;
-  color: white;
+  color: var(--light-text-color);
   border: none;
   font-size: 28px;
   font-weight: 700;
@@ -48,7 +50,7 @@
 }
 
 .burger__icon {
-  fill: #fff;
+  fill: var(--light-text-color);
   width: 24px;
   height: 24px;
 }

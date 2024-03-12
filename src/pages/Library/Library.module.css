@@ -1,7 +1,9 @@
+@import "../../variables";
+
 .info__text {
   padding: 12px;
   background: rgba(40, 40, 40, 0.7);
   font-weight: 700;
-  color: #fff;
+  color: var(--light-text-color);
   font-size: 28px;
 }

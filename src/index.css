@@ -1,4 +1,5 @@
 @import-normalize;
+@import "./variables";
 
 * {
   box-sizing: border-box;
@@ -7,13 +8,15 @@
 html,
 body {
   height: 100%;
-  background-attachment: fixed;
   margin: 0;
   scrollbar-gutter: stable;
-  background: linear-gradient(rgba(47, 48, 58, 0.3), rgba(47, 48, 58, 0.3)),
-    url(./images/ironman.jpg) 50% 0 no-repeat;
+  background-image: url(./images/ironman.jpg);
+  background-color: var(--bg-color);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
   background-size: cover;
-  font-family: sans-serif;
+  background-attachment: fixed;
+  font-family: var(--font-family-primary);
   line-height: 1.5;
 }
 
@@ -52,7 +55,7 @@ img {
 }
 
 a {
-  color: #000;
+  color: var(--dark-text-color);
   text-decoration: none;
 }
 
@@ -82,47 +85,14 @@ input {
   }
 }
 
-/* Buttons Styles */
-
 header li .active {
-  color: #ff6b01;
-  border-bottom: 4px solid #ff6b01;
+  color: var(--primary-button-color);
+  border-bottom: 4px solid var(--button-border-color);
 }
 
 .btn {
   border: none;
   background: inherit;
-}
-
-.styled__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 160px;
-
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #ff6b01;
-  border: 2px solid #ff6b01;
-  border-radius: 20px;
-
-  padding: 10px 40px;
-  font-family: Nunito Sans;
-  font-size: 14px;
-  font-weight: 700;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
-}
-
-.styled__link:hover,
-.styled__link:focus {
-  background-color: #da5c02;
-}
-
-.styled__link.active {
-  color: #212121;
-  background-color: #fff;
 }
 
 .spinnerBox {

@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .paginate__box {
   display: flex;
 }
@@ -31,8 +33,8 @@
   font-size: 18px;
   font-weight: 600;
   border-bottom: 3px solid transparent;
-  color: #ff6b01;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--primary-button-color);
+  transition: var(--transition-primary);
 }
 .break_link {
   padding: 10px 0 0;
@@ -40,13 +42,13 @@
 
 .page_link:hover,
 .page_link:focus {
-  color: #da5c02;
-  border-bottom: 3px solid #da5c02;
+  color: var(--button-accent-bg);
+  border-bottom: 3px solid var(--button-accent-bg);
 }
 
 .page_item.active .page_link {
-  color: #fff;
-  border-bottom: 3px solid #da5c02;
+  color: var(--light-text-color);
+  border-bottom: 3px solid var(--button-accent-bg);
 }
 
 .break_item {

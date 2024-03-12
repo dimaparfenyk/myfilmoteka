@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .close__btn {
   position: absolute;
   top: 6px;
@@ -16,7 +18,7 @@
 
 .close__icon:hover,
 .close__icon:focus {
-  fill: #da5c02;
+  fill: var(--button-accent-bg);
 }
 
 .mob__menu {
@@ -29,7 +31,7 @@
   padding: 40px 40px 40px 120px;
   opacity: 0;
   transform: translate(100%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
 }
 
 .mob__menu.show {
@@ -56,17 +58,17 @@
   height: 6px;
   margin-top: 20px;
   border-radius: 50%;
-  background-color: #ff6b01;
+  background-color: var(--primary-button-color);
   opacity: 0.8;
 }
 
 .mob__nav_item a {
-  color: #ff6b01;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--primary-button-color);
+  transition: var(--transition-primary);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: #da5c02;
+    color: var(--button-accent-bg);
   }
 }

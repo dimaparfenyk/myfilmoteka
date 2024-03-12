@@ -1,8 +1,10 @@
+@import "../../variables";
+
 .styled__link {
   text-transform: uppercase;
   padding: 10px;
-  color: #fff;
-  font-family: Nunito Sans;
-  font-size: 20px;
-  font-weight: 700;
+  color: var(--light-text-color);
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
 }

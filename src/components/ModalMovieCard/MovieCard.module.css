@@ -1,8 +1,10 @@
+@import "../../variables";
+
 .modal__wrapper {
   position: relative;
   max-width: 814px;
   margin: 0 auto;
-  background: white;
+  background-color: var(--light-text-color);
   padding: 16px;
 }
 
@@ -66,8 +68,8 @@
 }
 .accent__box {
   display: inline-block;
-  color: #fff;
-  background-color: #ff6b01;
+  color: var(--light-text-color);
+  background-color: var(--button-accent-bg);
   padding: 0 10px;
   margin-left: 8px;
   border-radius: 5px;
@@ -76,17 +78,23 @@
 .MovieMeta__item {
   margin-bottom: 10px;
   color: #8c8c8c;
-  font-size: 16px;
+  font-size: var(--mob-text-font-size);
   font-weight: 500;
   line-height: 1.33;
 }
+
+@media screen and (min-width: 1200px) {
+  .MovieMeta__item {
+    font-size: var(--main-text-font-size);
+  }
+}
 .cardSubtitle {
-  color: #ff6b01;
+  color: var(--primary-button-color);
   margin-bottom: 8px;
 }
 .meta__text {
   display: inline-block;
-  color: #000;
+  color: var(--dark-text-color);
 }
 
 .meta__text:not(:last-child) {
@@ -104,12 +112,12 @@
   fill: #8c8c8c;
   height: 24px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
 }
 
 .closeIcon:hover,
 .closeIcon:focus {
-  fill: #da5c02;
+  fill: var(--button-accent-bg);
 }
 
 .add__btn {
